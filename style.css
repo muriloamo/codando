@@ -1,0 +1,163 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    margin: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+main {
+    flex: 1; /* Ocupa o espaço restante */
+    padding: 20px;
+}
+
+aside {
+    width: 200px;
+    background-color: #eee;
+    padding: 20px;
+}
+
+.left-sidebar {
+    flex: 0 1 20%;
+    padding-right: 20px;
+    /* order: -1; Coloca a barra lateral esquerda primeiro no flex container */
+}
+
+.right-sidebar {
+    flex: 0 1 20%;
+    padding-left: 20px;
+    /* A ordem padrão é 0, então aparece depois do main */
+}
+
+aside h3 {
+    margin-top: 0;
+}
+
+aside ul {
+    list-style: none;
+    padding: 0;
+}
+
+aside ul li {
+    margin-bottom: 0.5em;
+}
+
+.widget {
+    margin-bottom: 1.5em;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+}
+
+.widget h4 {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+    position: sticky; /* Para fixar no rodapé, se desejado */
+    bottom: 0;
+    width: 100%;
+}
+
+/* Media query para telas menores (tornar as laterais abaixo do conteúdo) */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    aside {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .left-sidebar {
+        order: 0; /* Retorna à ordem padrão */
+    }
+}
+
+
+#imagens {
+    width:60%;
+    height: 150px;
+    display: block; /* Faz a imagem se comportar como um bloco */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+img{
+    width: 50px;
+    height: auto;
+    text-align: center;
+}
+
+
+/* Estilos para o slideshow */
+.slideshow-container {
+    position: relative;
+    width: 100%; /* Ajuste a largura conforme necessário */
+    height: auto; /* A altura será determinada pela imagem */
+    overflow: hidden; /* Esconde as imagens que não estão visíveis */
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0; /* Inicialmente todas as imagens estão invisíveis */
+    animation: slideshow 9s infinite; /* Nome da animação, duração total e loop infinito */
+    transition: opacity 1s ease-in-out; /* Transição suave para a opacidade (pode ser opcional aqui) */
+}
+
+/* Define um atraso diferente para cada imagem aparecer */
+.slideshow-container img:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.slideshow-container img:nth-child(2) {
+    animation-delay: 3s;
+}
+
+.slideshow-container img:nth-child(3) {
+    animation-delay: 6s;
+}
+
+/* Definição da animação */
+@keyframes slideshow {
+    0% {
+        opacity: 0;
+        z-index: 1; /* Garante que a imagem apareça sobre as outras */
+    }
+    21.66% { /* 3 segundos de visibilidade (1/6 de 18s, mas com 9s de ciclo) */
+        opacity: 1;
+        z-index: 2;
+    }
+    58.32% { /* Começa a desaparecer */
+        opacity: 0;
+        z-index: 1;
+    }
+    90% {
+        opacity: 0;
+        z-index: 1;
+    }
+}
+  
