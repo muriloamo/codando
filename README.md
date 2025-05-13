@@ -1,4 +1,4 @@
 # codando
 Códigos em Python, Javascript, HTML e CSS
 
-https://muriloamo.github.io/codando/
+<a href="https://muriloamo.github.io/codando/"_blank">CODANDO</a>
